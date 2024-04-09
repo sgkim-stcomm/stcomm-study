@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seul Gi To do list</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    주석처리 - Ctrl + / (단축키), 나만 볼 수 있음
+    <!-- <link rel="stylesheet" href="/css/common.css"> -->
+    <style>
+        body {
+            background-color: #b39cbb;
+        }
+        #test{}
+        .test1 {
+            display: inline-block;
+        }
+        .test2 {
+            display: inline-block;
+        }
+        .area1 {
+            text-align: center;
+        }
+        .area1 p {
+            font-size: 40px;
+            /* width: 250px; */
+        }
+        .area2 {
+            background-color: beige;
+            text-align: center;
+        }
+        .area2 ul li button {
+            background-color: aquamarine;
+        }
+        .area2 ul {
+            display: inline-block;
+        }
+        .area3 {
+            display: inline-block;
+        }
+        </style>
+
+</head>
+<body>
+    <Section>
+        <input type="text" value="0" class="countText">
+        <button>+</button>
+        <button>-</button>
+    </Section>
+    <script>
+        // 변수
+        // var countText = document.getElementsByClassName('countText')[0];
+        // console.log(countText)
+        // countText.style.backgroundColor = 'red';
+
+        var countText = document.getElementsByClassName('countText')[0];
+        countText.style.backgroundColor = 'red';
+
+        var countTextJq = $('.countText');
+        countTextJq.css('background-color,'pink');
+
+    </script>
+
+    <section>
+        <div class="test1" style="background-color: red;">hello</div>
+        <div class="test2" style="background-color: blue;">hi</div>
+
+
+        <article id="test" class="area1">
+            <p>To do list</p>
+            <input type="text" id="input-box" placeholder="내용을 입력하세요">
+            <button>+</button>
+            <button>-</button>
+        </article>
+        <article class="area2">
+            <ul>
+                <li>
+                    첫번째 할일 : 코딩 공부
+                    <button>완료</button>
+                </li>
+                <li>
+                    두번째 할일 : 영어 공부
+                    <button>완료</button>
+                </li>
+            </ul>
+            <ol>
+                <li>
+                    페이지 작성 1
+                    <button>X</button>
+                </li>
+                <li>
+                    페이지 작성2
+                    <button>X</button>
+                </li>
+            </ol>
+        </article>
+    </section>
+</body>
+
+<body>
+    oi > li - 넘버링됨, 리스트화
+    P 태그 - 문단, p 태그를 사용하면 기본적인 간격이 생김
+    <p>HTML - 기본적인 레이아웃 구조를 형성하는 마크업 언어</p>
+    br 태그 - 간격없이 줄바꿈 시켜줌, 앤터느낌쓰~
+    <br>CSS - HTML 스타일 시트
+    <br>Javascript - 기능 개발
+    div : 시작과 끝을 알려줌
+    <div>공부를 합시다</div>
+
+    <header>
+        <img src="/" alt="로고">
+        <div>
+            gnb
+        </div>
+    </header>
+
+    <section>
+        <article>슬라이드</article>
+        <article>코너1</article>
+    </section>
+
+    <footer>푸터</footer>
+   
+
+</body>
+
+</html>

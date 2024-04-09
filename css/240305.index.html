@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <!-- <link rel="stylesheet" href="common.css"> -->
+    <style>
+        body {
+            background-color: #d3e19e;
+        }
+        #test{}
+        .area1 {
+            padding-top: 30px;
+            text-align: center;
+            font-size: 30px;
+            margin: auto;
+        }
+        .area2 {
+            text-align: center;
+        }
+        #input-box {
+            width: 300px;
+            height: 27px;
+            border: 1px solid gray;
+            font-size: medium;
+        }
+        #inputbuttonadd {
+            height: 26px;
+            width: 30px;
+            font-size: medium;
+            background-color: #7eb886;
+            color: white;
+        }
+        #inputbuttonremove {
+            height: 27px;
+            width: 50px;
+            font-size: medium;
+            background-color: #7eb886;
+            color: white;
+        }
+        .to-do-list {
+             box-sizing: border-box;
+             background-color: white;
+             border: 10px solid white;
+             border-radius: 20%;
+             width: 350px;
+             height: 450px;
+             margin: 0 auto;
+             margin-top: 40px;
+             padding: 0 40px;
+        }
+        li {
+            background-color: white;
+            margin-top: 10%;
+            /* list-style: none; */
+            display: flex;
+             justify-content: flex-start;
+            }
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border-radius: 30%;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <article id="test" class="area1">
+            <p>To Do List</p>
+            <input type="text" id="input-box" placeholder="내용을 입력하세요" class="inputDate">
+            <input type="button" id="inputbuttonadd" value="+" onclick="onClickInputButton(this)">
+
+        </article>
+        <article class="area2">
+            <ul class="to-do-list">
+                <li>
+                    <input type="checkbox" class="checkbox" onclick="onClickCheckbox(this)">
+                    <span>코딩 공부하기</span>
+                    <input type="button" id="inputbuttonremove" value="삭제" onclick="onClickDeleteButton(this)">
+                </li>
+                <li>
+                    <input type="checkbox" class="checkbox" onclick="onClickCheckbox(this)">
+                    <span>청소하기</span>
+                    <input type="button" id="inputbuttonremove" value="삭제" onclick="onClickDeleteButton(this)">
+                </li>
+                <li>
+                    <input type="checkbox" class="checkbox" onclick="onClickCheckbox(this)">
+                    <span>영화보기</span>
+                    <input type="button" id="inputbuttonremove" value="삭제" onclick="onClickDeleteButton(this)">
+                </li>
+            </ul>
+        </article>
+    </section>
+    <script src="240305.index.js"></script>
+
+</body>
+</html>

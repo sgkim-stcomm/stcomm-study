@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parcel Sandbox</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <h2 id="number">0</h2>
+    <!-- <div>
+      <button id="increase">+1</button>
+      <button id="decrease">-1</button>
+    </div> -->
+
+    <div>
+      <button class="increase">+1</button>
+      <button class="decrease">-1</button>
+    </div>
+
+    <!-- <script src="240311.index.js"></script> -->
+
+    <script>
+      // javascript
+      const number = document.getElementById("number");
+      const increase = document.getElementById("increase");
+      const decrease = document.getElementById("decrease");
+
+      // jq
+      let jq_number = $("#number");
+      let jq_increase = $(".increase");
+      let jq_decrease = $(".decrease");
+
+
+      function plus (){
+        let numberCurrent = Number(jq_number.text()); // 숫자 0
+        jq_number.text(numberCurrent + 1);
+      
+
+        // jq_number.text('1234')
+        // console.log('plus 함수입니다.');
+      }
+
+      function minus (){
+        let numberCurrent = Number(jq_number.text()); // 숫자 0
+        jq_number.text(numberCurrent - 1);
+      }
+
+      // 버튼 클릭할 때만 console 텍스트 노출
+      jq_increase.on('click', function(){
+      plus();
+      })
+
+      jq_decrease.on('click', function(){
+      minus();
+      })
+
+
+      // 아무런 조건 없이 페이지만 들어가도 console 텍스트 노출
+      // plus(); 
+      
+      
+      // 데이터 타입 - string(문자열 : 하얀색으로 노출, 연산되지않음) / 숫자 / null / 언디파인드 / boolean
+      console.log(jq_number.text())
+      console.log(Number(jq_number.text()))
+    
+
+      // console.log(number.innerText);
+      // console.log(jp_number.text());
+
+
+
+    </script>
+</body>
+</html>

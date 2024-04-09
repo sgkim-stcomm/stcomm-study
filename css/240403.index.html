@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        body {background-color: rgb(241, 223, 241);}
+        #test {}
+        .area1 {
+            padding-top: 30px;
+            text-align: center;
+            font-size: 30px;
+        }
+        #inputbox {
+            width: 250px;
+            height: 25px;
+        }
+        .uladd {
+            box-sizing: border-box;
+            background-color: white;
+            border: 10px solid white;
+            border-radius: 10%;
+            width: 350px;
+            height: 450px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+        li {
+            background-color: white;
+            margin-top: 10%;
+            display: flex;
+        }
+
+        .checkbox {
+            width: 15px;
+            height: 15px;
+            border-radius: 30%;
+        }
+
+        .addBtn {
+            width: 45px;
+            height: 30px;
+            font-size: small;
+            background-color: #c79cb1;
+            color: black;
+        }
+
+        .complebtn {
+            display: none;
+        }
+
+        .uladd li.modify .modifyBtn {display: none;}
+        .uladd li.modify .complebtn {display: inline-block;}
+
+
+    </style>
+</head>
+<body>
+    <section>
+        <article class="area1">
+            <p>To Do List</p>
+            <input type="text" id="inputbox" placeholder="내용을 입력하세요">
+            <button class="addBtn">추가</button>
+        </article>
+        <article>
+            <ul class="uladd">
+                <li>
+                    <input type="checkbox" class="checkbox">
+                    <span class="text">html 공부</span>
+                    <button class="delBtn">삭제</button>
+                    <button class="modifyBtn">수정</button>
+                    <button class="complebtn">완료</button>
+                </li>
+                <li>
+                    <input type="checkbox" class="checkbox">
+                    <span class="text">css 공부</span>
+                    <button class="delBtn">삭제</button>
+                    <button class="modifyBtn">수정</button>
+                    <button class="complebtn">완료</button>
+                </li>
+            </ul>
+        </article>
+    </section>
+    <script>
+        let inputDate = $("#inputbox");
+        let addBtn = $(".addBtn");
+        let delBtn = $(".delBtn");
+        let listItem = $(".uladd"); //ul_list선언
+        let inputText = $(".text");
+
+        // 추가
+        function add() {
+            //todo 텍스트 필드에서 값을 가져온다.
+            let element = inputDate.val(); //입력할 글씨
+            inputDate.val("");
+            console.log(element);
+            listItem.append("<li><input type='checkbox' class='checkbox'> <span class='text'>"+element+"</span><button class='delBtn'>삭제</button> <button class='modifyBtn'>수정</button> <button class='complebtn'>완료</button></li>"); //ul_list안쪽에 li추가
+        }
+
+        addBtn.on('click', function(){
+        add();
+        })
+
+        // 내용 수정
+        $(document).on('click', ".modifyBtn", function(e){
+            console.log('수정버튼');
+
+            $(this).parents('li').addClass('modify');
+
+            let thisText = $(this).parents('li').find('.text');
+            let textBefore = thisText.text();
+            thisText.html("<input type='text' class='modifyText' value='"+textBefore+"' />")
+        })
+
+        // 내용 완료
+        $(document).on('click', ".complebtn", function(e){
+            console.log('완료버튼');
+
+            $(this).parents('li').removeClass('modify');
+            let textAfer = $(this).parents('li').find('.modifyText').val();
+            $(this).parents('li').find('span').html(textAfer);
+        });
+
+        // 삭제
+        function itemDelete () {
+            console.log('삭제버튼');
+        }
+
+        $(document).on('click', ".delBtn", function(e){
+            console.log('delBtn');
+            console.log(e.target)
+
+            let parentLi = $(this).parents('li');
+            console.log(parentLi)
+            parentLi.remove();
+        })
+
+        // delBtn.on('click', function(){
+        //     let parentLi = $(this).parents('li')
+        //     parentLi.remove();
+        //     // console.log($(this).parents('li'))
+        //     // itemDelete();
+        // })
+
+    </script>
+</body>
+</html>
